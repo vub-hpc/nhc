@@ -1,0 +1,8 @@
+sudo: required
+language: c
+dist: trusty
+cache: ccache
+script:
+  - ./autogen.sh
+  - ./configure
+  - make test
