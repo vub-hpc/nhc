@@ -8,7 +8,10 @@ plan $((3+2+2)) "bash variable sanity check" && {
     is $BASHPID $$ "BASH built-in variable \$BASHPID"
     isnt $L $LINENO "BASH built-in variable \$LINENO"
 
-    for VAR in BASH_REMATCH BASH_VERSINFO ; do
+    for VAR in BASH_REMATCH; do
+        like "$(declare -p $VAR 2>/dev/null)" 'declare -a *' "BASH built-in variable \$$VAR"
+    done
+    for VAR in BASH_VERSINFO; do
         like "$(declare -p $VAR 2>/dev/null)" 'declare -ar *' "BASH built-in variable \$$VAR"
     done
 

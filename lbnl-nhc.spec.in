@@ -1,6 +1,6 @@
 %global name    @PACKAGE@
 %global version @VERSION@
-%global release %{rel}%{?dist}.bx.1
+%global release %{rel}%{?dist}.bx.2
 
 ### Macros to populate RPM %{RELEASE} field with useful info
 # {gitrelease} holds the ./configure-generated version of the same
